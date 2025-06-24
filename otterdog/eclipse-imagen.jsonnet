@@ -20,7 +20,12 @@ orgs.newOrg('technology.imagen', 'eclipse-imagen') {
       homepage: "",
       web_commit_signoff_required: false,
       environments: [
-        orgs.newEnvironment('github-pages'),
+        orgs.newEnvironment('github-pages') {
+          deployment_branch_policy: "selected",
+          branch_policies: [
+            "master",
+          ]
+        },
       ],
     },
   ],
