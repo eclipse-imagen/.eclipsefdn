@@ -11,11 +11,11 @@ orgs.newOrg('technology.imagen', 'eclipse-imagen') {
     orgs.newRepo('imagen') {
       allow_merge_commit: true,
       allow_update_branch: false,
-      default_branch: "master",
+      default_branch: "main",
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
       gh_pages_build_type: "legacy",
-      gh_pages_source_branch: "master",
+      gh_pages_source_branch: "main",
       gh_pages_source_path: "/docs",
       homepage: "",
       web_commit_signoff_required: false,
@@ -23,7 +23,7 @@ orgs.newOrg('technology.imagen', 'eclipse-imagen') {
         orgs.newEnvironment('github-pages') {
           deployment_branch_policy: "selected",
           branch_policies: [
-            "master",
+            "main",
           ]
         },
       ],
