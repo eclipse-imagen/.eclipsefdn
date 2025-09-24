@@ -7,6 +7,23 @@ orgs.newOrg('technology.imagen', 'eclipse-imagen') {
       actions_can_approve_pull_request_reviews: false,
     },
   },
+  secrets+: [
+    orgs.newOrgSecret('GPG_KEY_ID') {
+      value: "pass:bots/technology.imagen/gpg/key_id",
+    },
+    orgs.newOrgSecret('GPG_PASSPHRASE') {
+      value: "pass:bots/technology.imagen/gpg/passphrase",
+    },
+    orgs.newOrgSecret('GPG_PRIVATE_KEY') {
+      value: "pass:bots/technology.imagen/gpg/secret-subkeys.asc",
+    },
+    orgs.newOrgSecret('CENTRAL_SONATYPE_TOKEN_PASSWORD') {
+      value: "pass:bots/technology.imagen/central.sonatype.org/token-password",
+    },
+    orgs.newOrgSecret('CENTRAL_SONATYPE_TOKEN_USERNAME') {
+      value: "pass:bots/technology.imagen/central.sonatype.org/token-username",
+    },
+  ],
   _repositories+:: [
     orgs.newRepo('imagen') {
       allow_merge_commit: true,
